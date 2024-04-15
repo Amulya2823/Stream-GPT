@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import Header from "./Header";
 import { Validate } from "../utils/Validate";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../utils/Firebase";
 
 const Login = () => {
@@ -18,18 +19,30 @@ const Login = () => {
 
     //sign in or sign up users
     if (!isSignIn) {
-      createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+      createUserWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
         .then((userCredential) => {
           const user = userCredential.user;
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          seterrorMessage(errorCode +" "+ errorMessage)
-
+          seterrorMessage(errorCode + " " + errorMessage);
         });
     } else {
-
+      signInWithEmailAndPassword(auth,  email.current.value,
+        password.current.value)
+        .then((userCredential) => {
+          const user = userCredential.user;
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          seterrorMessage("User Not Found");
+        });
     }
   };
 
