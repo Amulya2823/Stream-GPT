@@ -7,6 +7,7 @@ import { auth } from "../utils/Firebase";
 import { updateProfile } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/UserSlice";
+import { BACK_IMG, PHOTO_URL } from "../utils/constants";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -33,8 +34,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL:
-              "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png?20201013161117",
+            photoURL: PHOTO_URL,
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -64,7 +64,6 @@ const Login = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
-          
         })
         .catch((error) => {
           seterrorMessage("User Not Found");
@@ -79,11 +78,7 @@ const Login = () => {
   return (
     <div>
       <Header />
-      <img
-        src="https://assets.nflxext.com/ffe/siteui/vlv3/c1366fb4-3292-4428-9639-b73f25539794/3417bf9a-0323-4480-84ee-e1cb2ff0966b/IN-en-20240408-popsignuptwoweeks-perspective_alpha_website_large.jpg"
-        alt="logo"
-        className="absolute"
-      />
+      <img src={BACK_IMG} alt="logo" className="absolute" />
       <form
         onSubmit={(e) => e.preventDefault()}
         className=" w-3/12 absolute p-12 bg-black  my-36 m-auto right-0 left-0 rounded-xl bg-opacity-70"
