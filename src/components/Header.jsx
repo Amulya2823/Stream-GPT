@@ -50,7 +50,7 @@ const Header = () => {
       {user && (
         <div className="flex p-4 ">
           <div>
-            <img className="w-12 h-12 m-2" src={user?.photoURL} alt="Profile" />
+            <img className="w-12 h-12 m-2 rounded-lg" src={user?.photoURL} alt="Profile" />
           </div>
           <button
             onClick={handleSignOut}
