@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
 import { addUser, removeUser } from "../utils/UserSlice";
 import { useEffect } from "react";
-import { LOGO } from "../utils/constants";
+import { LOGO, SUPPORTED_LANG } from "../utils/constants";
 import { toggleGptSearch } from "../utils/GptSlice";
 
 
@@ -55,6 +55,9 @@ const Header = () => {
       <img src={LOGO} alt="logo" className="w-48 cursor-pointer" />
       {user && (
         <div className="flex p-4 ">
+          <select className="p-4 text-lg bg-slate-900 text-white">
+            {SUPPORTED_LANG.map( lang => <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>)}
+          </select>
           <button className="p-4 h-14 font-bold text-slate-50" onClick={gptSearch}>GPT Search</button>
           <div>
             <img className="w-12 h-12 m-2 rounded-lg" src={user?.photoURL} alt="Profile" />

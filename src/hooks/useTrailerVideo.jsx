@@ -17,7 +17,7 @@ const useTrailerVideo = (movieId) => {
     );
     
     const trailer = filteredTrailer[0];
-      
+    
     dispatch(addTrailerVideo(trailer));
   };
   useEffect(() => {
