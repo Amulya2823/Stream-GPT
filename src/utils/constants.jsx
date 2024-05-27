@@ -12,7 +12,7 @@ export const OPTIONS = {
   headers: {
     accept: "application/json",
     Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMDgxZTRhMzZkZDI3NDQ5NzNhYTIzMmQxODVhYzk0MyIsInN1YiI6IjY2MWQ1YjQyNGNhNjc2MDE2NDFjM2YyZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.7vrQXOR9WIdUtDPi73CamOFDAT52-Vv6M4YKMbn43zU",
+      "Bearer" + process.env.REACT_APP_TMDB_KEY,
   },
 };
 
@@ -24,3 +24,4 @@ export const SUPPORTED_LANG = [
   { identifier: "telugu", name: "Telugu" },
   { identifier: "malayalam", name: "Malayalam" },
 ];
+

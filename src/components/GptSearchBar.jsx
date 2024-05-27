@@ -1,16 +1,31 @@
-import React from 'react'
-import languages from '../utils/LanguageConstants';
-import { SUPPORTED_LANG } from '../utils/constants';
+import React, { useRef } from "react";
+import languages from "../utils/LanguageConstants";
+import { useSelector } from "react-redux";
 
 const GptSearchBar = () => {
+  const langKey = useSelector((store) => store.config.lang);
+  const searchText = useRef(null);
+
   return (
-    <div className='pt-[10%] flex justify-center '>
-      <form className='p-2 rounded-lg w-1/2 bg-black text-white grid grid-cols-12'>
-        <input className=' p-2 col-span-9 text-lg text-black ' type='text' placeholder={languages.hindi.gptPlaceHolder}></input>
-        <button className='p-4 col-span-3 bg-red-500 text-xl font-semibold rounded-lg'>{languages.hindi.search}</button>
+    <div className="pt-[10%] flex justify-center ">
+      <form
+        className="p-2 rounded-lg w-1/2 bg-black text-white grid grid-cols-12"
+        onSubmit={(e) => e.preventDefault()}
+      >
+        <input
+          ref={searchText}
+          className=" p-2 col-span-9 text-lg text-black "
+          type="text"
+          placeholder={languages[langKey].gptPlaceHolder}
+        ></input>
+        <button
+          className="p-4 col-span-3 bg-red-500 text-xl font-semibold rounded-lg"
+        >
+          {languages[langKey].search}
+        </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
 export default GptSearchBar;
