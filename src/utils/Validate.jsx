@@ -6,7 +6,7 @@ export const Validate = (email,password,FirstName ,LastName ) => {
     const isLastValid =  /^[a-zA-Z\s'-]{1,50}$/.test(LastName)
 
     if(!isEmailValid) return "Email is not Valid"
-    if(!isPassValid) return "Password should not have special charecters and be atleast 8 digits "
+    if(!isPassValid) return "Password should be atleast 8 digits,capital,small&number and not have special charecters"
     if(!isfirstValid) return "First Name is not Valid"
     if(!isLastValid) return "Second Name is not Valid"
 

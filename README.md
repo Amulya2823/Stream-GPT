@@ -3,8 +3,6 @@
 - Secure Access: Safeguard your account with user authentication, offering hassle-free login, signup, and password recovery options.
  
 - Explore Cast: Click on any cast member to discover all movies featuring that actor or actress, expanding your cinematic horizons effortlessly.
-
-- Device-Friendly: Enjoy Netflix seamlessly across all devices, whether you're on a desktop, tablet, or smartphone.
  
 - Diverse Movie Categories: On the homepage, immerse yourself in a curated selection of movies categorized as Now Playing, Discover, Top Rated, All-Time Favorites, and Popular, powered by the The Movie Database (TMDB) API.
  
