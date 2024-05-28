@@ -21,6 +21,7 @@ const usePopular = () => {
 
   useEffect(() => {
     !popularVideo &&  getPopular();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
 

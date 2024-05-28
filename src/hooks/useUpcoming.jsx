@@ -20,6 +20,7 @@ const useUpcomingMovies = () => {
 
   useEffect(() => {
    !upcomingMovies && getUpcoming();
+   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
 

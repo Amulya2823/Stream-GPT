@@ -20,6 +20,7 @@ const useTopRated = () => {
 
   useEffect(() => {
    !topRated && getTopRated();
+   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
 

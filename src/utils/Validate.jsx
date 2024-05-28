@@ -1,6 +1,7 @@
 export const Validate = (email,password,FirstName ,LastName ) => {
-
-    const isEmailValid = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/.test(email)
+    
+    // eslint-disable-next-line
+    const isEmailValid = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)
     const isPassValid = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(password)
     const isfirstValid = /^[a-zA-Z\s'-]{1,50}$/.test(FirstName)
     const isLastValid =  /^[a-zA-Z\s'-]{1,50}$/.test(LastName)
@@ -12,6 +13,5 @@ export const Validate = (email,password,FirstName ,LastName ) => {
 
 
     return null;
-
 }
 
